@@ -1,0 +1,14 @@
+* To build libcurl for ARM architecture
+export CC=/opt/PalmPDK/arm-gcc/bin/arm-none-linux-gnueabi-gcc
+./configure --host=arm-linux --prefix=~/arm-build
+make && make install
+
+* Build the downloader binary:
+** ./buildit_for_device.sh
+	 
+* scp binary to the emulator:
+** scp -P 5522 downloader root@localhost:/
+* make it executable (on device or emulator)
+** chmod +x downloader
+
+
